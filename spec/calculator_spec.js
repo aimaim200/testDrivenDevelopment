@@ -44,5 +44,13 @@ describe("Calculator",function(){
         expect(Calculator.current).toEqual(0);
      });
 
+    describe("when multiplying 2 * 5", function() {
+        it( "should equal 10", function() {
+            Calculator.current = 2;
+            Calculator.multiply(5);
+
+            expect(Calculator.current).toEqual(10);
+        })
+    });
 
 });
