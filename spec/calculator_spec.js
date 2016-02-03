@@ -24,12 +24,25 @@ describe("Calculator",function(){
 
 	});
 
-   describe("when subtracting numbers ",function(){
+  describe("when subtracting numbers ",function(){
        it("should subtract numbers ", function(){
        	   expect(Calculator.subtract(5)).toEqual(-5);
        });
 
    });
+
+  describe("when multiplying  numbers ",function(){
+      it("can multiply positive integers", function() {
+          expect(Calculator.mult(4, 3)).toEqual(0);
+      });
+    });
+
+
+  describe("when Dividing  numbers ",function(){
+     it("can Divide positive integers", function() {
+          expect(Calculator.Divide(6, 2)).toEqual(0);
+      });
+    });
      it("Reset the Calculator to zero",function(){
      	Calculator.current = 20;
      	Calculator.reset();

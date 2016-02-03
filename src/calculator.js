@@ -27,6 +27,31 @@
     	this.current = result;
     	return result;
     },
+
+   //Multiplication Function
+   mult: function (  ){
+   
+       var result =  this.current;
+
+       for( var i =0, len = arguments.length; i < len; i++ ) {
+          result = result * arguments[i];
+       }
+      this.current = result;
+      return result;
+    },
+
+    
+   //Dividing Function
+    Divide: function (  ){
+   
+       var result =  this.current;
+
+       for( var i =0, len = arguments.length; i < len; i++ ) {
+          result = result / arguments[i];
+       }
+      this.current = result;
+      return result;
+    },
     //The Reset Function
      reset: function () {
        this.current = 0;
