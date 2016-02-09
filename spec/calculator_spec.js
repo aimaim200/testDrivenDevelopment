@@ -13,24 +13,22 @@ describe("Calculator",function(){
 			expect(Calculator.current).toEqual(0);
 		});
 
-	    it("should add 1 to 2 to get three", function() {
-	        expect(Calculator.add(1, 2)).toEqual(3);
-	    });
-
-		
+		it("should add numbers",function(){
+			expect(Calculator.add(5)).toEqual(5);
+			expect(Calculator.add(5)).toEqual(10);
+		});
 	    it("should add any number of numbers", function(){
 	    	expect(Calculator.add(1,2,3)).toEqual(6);
+	    	expect(Calculator.add(1,2,3,4)).toEqual(16);
 	    });
 
 	});
 
   describe("when subtracting numbers ",function(){
        it("should subtract numbers ", function(){
-       	   expect(Calculator.subtract(0,5)).toEqual(-5);
+       	   expect(Calculator.subtract(5)).toEqual(-5);
        });
-       it("should subtract a -ve number from a -ve number ", function () {
-           expect(Calculator.subtract(-2, 5)).toEqual(-7);
-       });
+
    });
 
   describe("when multiplying  numbers ",function(){
@@ -50,40 +48,22 @@ describe("Calculator",function(){
      	Calculator.reset();
 
         expect(Calculator.current).toEqual(0);
+
+        Calculator.add(5);
+        Calculator.add(20);
+        expect(Calculator.current).toEqual(25);
+
+        Calculator.reset();
+        expect(Calculator.current).toEqual(0);
      });
 
     describe("when multiplying 2 * 5", function() {
-        it("should equal 10", function() {
+        it( "should equal 10", function() {
+            Calculator.current = 2;
+            Calculator.multiply(5);
 
-            Calculator.multiply(5, 2);
-  
-            expect(Calculator.multiply(5, 2)).toEqual(10);
-        });
+            expect(Calculator.current).toEqual(10);
+        })
     });
-
-
-    describe("when dividing 6 by 2", function() {
-        it("should return 3", function() {
-            expect(Calculator.divide(6, 2)).toEqual(3);
-        });
-
-        it("should return 4 for 8 divided by 2", function () {
-            expect(Calculator.divide(8, 2)).toEqual(4);
-        });
-    });
-
-    describe("modulus of 3 and 2", function() {
-        it("should reutrn 1", function() {
-            expect(Calculator.modulus(3, 2)).toEqual(1);
-        });
-    });
-
-    describe("When calculating the average", function() {
-        it("It should return the average of two numbers", function() {
-            expect(Calculator.average(7, 5)).toEqual(6);
-        });
-
-    });
-
 
 });
